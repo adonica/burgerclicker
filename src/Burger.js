@@ -6,7 +6,7 @@ function Burger(props) {
     const classValue = pressed ? "burger__img burger__img--pressed": "burger__img";
   
     return (
-        <div className="Burger">
+        <div className="burger">
           {pressed ? "painettu" : "ei painettu"}
           <img 
           src={burger}
