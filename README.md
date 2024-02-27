@@ -1,4 +1,22 @@
+# BurgerClicker
+
+## Description:
+An application of an imaginary hamburger restaurant, where by clicking on a hamburger you get discount coupons for the restaurant.
+The more you click, the more coupons you get.
+
+This project work was included in Frontend development course.
+
+## Screenshots
+
+![burgerclicker_main](https://github.com/adonica/burgerclicker/assets/63338766/ef986000-4a83-485b-b731-1ac240626511)
+![burgerclicker_coupons](https://github.com/adonica/burgerclicker/assets/63338766/70ffaae8-a837-44e3-b32d-ddfcbfc7a545)
+![burgerclicker_profile](https://github.com/adonica/burgerclicker/assets/63338766/6a60b617-c026-4432-bce7-ab50d9c27108)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Firestore Integration
+
+This project utilizes Firestore for data storage and real-time updates.
 
 ## Available Scripts
 
