@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, BrowserRouter as Router} from 'react-router-dom';
+import { Route, Routes, BrowserRouter as Router} from 'react-router-dom';
 
 import allCoupons from './allCoupons';
 
@@ -42,9 +42,9 @@ class Clicker extends Component{
       if(coupon.price <= clicks) {
         coupons++;
       }
-      if((updateValue < clicks && coupon.price > updateValue) || 
+      if((updateValue < clicks && coupon.price > updateValue) ||
         (coupon.price > clicks && coupon.price < updateValue)) {
-       updateValue = coupon.price; 
+       updateValue = coupon.price;
       }
       this.setState({
         claimableCoupons: coupons,
@@ -85,25 +85,22 @@ class Clicker extends Component{
   }
 
 
-  render() {   
+  render() {
     return (
       <Router>
-        <div className="clicker">      
-          <Route path= "/" exact render = {props => (
-            <Game clicks = {this.state.clicks} setClicks={this.setClicks} />
-          )} />
-          <Route path="/coupons" render={props => (
-            <Coupons clicks={this.state.clicks} claimCoupon={this.claimCoupon} />            
-          )} />
-          <Route path="/profile" render ={props => (
-            <Profile coupons = {this.state.coupons} />
-            
-           )} />
+        <div className="clicker">
+          <Routes>
+          <Route path= "/" element={<Game clicks = {this.state.clicks} setClicks={this.setClicks} /> } />
+          <Route path="/coupons" element={<Coupons clicks={this.state.clicks} claimCoupon={this.claimCoupon} /> } />
+          <Route path="/profile" element={<Profile coupons = {this.state.coupons} /> } />
+            </Routes>
           <Menu claimableCoupons={this.state.claimableCoupons} />
+
         </div>
-      </Router> 
+
+      </Router>
     );
- } 
+ }
 }
 
 export default Clicker;
