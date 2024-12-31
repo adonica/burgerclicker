@@ -4,7 +4,7 @@
 An application of an imaginary hamburger restaurant, where by clicking on a hamburger you get discount coupons for the restaurant.
 The more you click, the more coupons you get.
 
-This project work was included in Frontend development course.
+This project work was included in Frontend development course in Basic degree in information and communication technology.
 
 ## Screenshots
 

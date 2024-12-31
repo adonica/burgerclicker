@@ -1,20 +1,14 @@
 import React from 'react';
 import allCoupons from './allCoupons';
 
- 
-class Coupons extends React.Component {   
+class Coupons extends React.Component {
 
-
- 
- 
-  render() {   
-
+  render() {
     const burgers = Math.floor(this.props.clicks);
 
     let filteredCoupons = allCoupons.filter(coupon =>
       coupon.price <= burgers
     );
-
 
     let rows = filteredCoupons.map(coupon => {
       return (
@@ -26,34 +20,28 @@ class Coupons extends React.Component {
           <div className="coupon__prices">
             <div className="coupon__newPrice">{coupon.newPrice.toFixed(2)}</div>
             <div className="coupon__oldPrice">{coupon.oldPrice.toFixed(2)}</div>
-           </div>
-           <div className="coupon__button">
-              <button onClick={() => {this.props.claimCoupon(coupon.id)}}>
+          </div>
+          <div className="coupon__button">
+            <button onClick={() => {this.props.claimCoupon(coupon.id)}}>
               <div className="coupon__price">{coupon.price}</div>
               <div className="coupon__claim">Claim!</div>
-              </button>
+            </button>
           </div>
-        </div> 
-
-      ); 
-   
-    }
-      
-    );
+        </div>
+      );
+    });
 
     return (
       <>
-      
-        <div className="header">    
-         <h1>Coupons</h1>
+        <div className="header">
+          <h1>Coupons</h1>
         </div>
         <div className="content">
-            {rows.length > 0 ? rows : "No coupons to claim."}
+          {rows.length > 0 ? rows : "No coupons to claim."}
         </div>
-       </>
-        
+      </>
     );
- }
+  }
 }
 
 export default Coupons;
